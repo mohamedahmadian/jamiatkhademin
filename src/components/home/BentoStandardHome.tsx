@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { PageType, ServicesSubTab, MediaSubTab } from '../../types';
 import { SOCIETY_INFO, NEWS_ITEMS } from '../../data/mockData';
 import { InteractiveMap } from '../common/InteractiveMap';
+import { PilgrimStoriesSection } from './PilgrimStoriesSection';
+import { PilgrimGuideHubSection } from './PilgrimGuideHubSection';
 import { 
   UserCheck, 
   Users, 
@@ -355,7 +357,19 @@ export const BentoStandardHome: React.FC<BentoStandardHomeProps> = ({
 
       </div>
 
-      {/* 3. NEW SECTION: NAZAR TITLE SELECTION, QUICK PAYMENT & OFFICIAL BANK ACCOUNTS (جایگزین بخش مسیرها) */}
+      {/* 3. STORIES & MEMORIES SECTION (روایت خدمت، دل‌نوشته‌ها و قصه‌های خادمان و زائران) */}
+      <PilgrimStoriesSection
+        setCurrentPage={setCurrentPage}
+        onNavigateMedia={onNavigateMedia}
+      />
+
+      {/* 4. PILGRIM GUIDE HUB SECTION (مرجع اختصاصی زائر: توصیه‌های سفر، مسیرها، آداب زیارت و حمل و نقل مشهد) */}
+      <PilgrimGuideHubSection
+        setCurrentPage={setCurrentPage}
+        onNavigateService={onNavigateService}
+      />
+
+      {/* 5. NAZAR TITLE SELECTION, QUICK PAYMENT & OFFICIAL BANK ACCOUNTS */}
       <section className="bg-white rounded-2xl border border-[#E5E1D8] p-6 sm:p-8 shadow-sm space-y-8">
         
         {/* Section Header */}

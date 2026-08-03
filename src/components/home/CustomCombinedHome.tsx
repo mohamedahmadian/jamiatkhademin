@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { PageType, ServicesSubTab, MediaSubTab } from '../../types';
 import { SOCIETY_INFO, NEWS_ITEMS, REVAYAT_STORIES } from '../../data/mockData';
 import { InteractiveMap } from '../common/InteractiveMap';
+import { PilgrimStoriesSection } from './PilgrimStoriesSection';
+import { PilgrimGuideHubSection } from './PilgrimGuideHubSection';
 import { 
   UserCheck, 
   Users, 
@@ -264,7 +266,19 @@ export const CustomCombinedHome: React.FC<CustomCombinedHomeProps> = ({
         </div>
       </section>
 
-      {/* 3. Nazar Selection & Official Bank Accounts Section */}
+      {/* 3. STORIES & MEMORIES SECTION (روایت خدمت، دل‌نوشته‌ها و قصه‌های خواندنی خادمان و زائران) */}
+      <PilgrimStoriesSection
+        setCurrentPage={setCurrentPage}
+        onNavigateMedia={onNavigateMedia}
+      />
+
+      {/* 4. PILGRIM GUIDE HUB SECTION (مرجع جامع زائر: توصیه‌های سفر، مسیرها، آداب زیارت و حمل‌ونقل عمومی مشهد) */}
+      <PilgrimGuideHubSection
+        setCurrentPage={setCurrentPage}
+        onNavigateService={onNavigateService}
+      />
+
+      {/* 5. Nazar Selection & Official Bank Accounts Section */}
       <section className="bg-white rounded-3xl border border-[#E5E1D8] p-6 sm:p-8 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E5E1D8] pb-4 gap-2">
           <div>
